@@ -8,7 +8,10 @@ public class Program {
 
 	public static void main(String[] args) {
 
+		//List'o kurimas
 		List<Preke> prekes = new ArrayList<Preke>() {
+			private static final long serialVersionUID = 1L;
+
 			{
 				add(new Preke() {
 					{
@@ -32,6 +35,10 @@ public class Program {
 
 		};
 
+		//Prekiu redagavimas
+		prekes.forEach(p->p.setKodas(p.getKodas()+"1"));
+		
+		//Prekiu spausdinimas
 		prekes.forEach(pr -> System.out.println(pr.getKodas()+" "+pr.getPavadinimas()+" "+pr.getKiekis()+" "+ pr.getKaina().doubleValue()));
 
 	}
